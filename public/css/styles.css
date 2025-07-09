@@ -20,7 +20,6 @@
 
     hr.mt-2{
         border-top: 3px solid #006db6; 
-        width: 100%;
     }
     .chart-wrapper {
       display: flex;

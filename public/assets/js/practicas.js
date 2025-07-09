@@ -1,9 +1,33 @@
 $(document).ready(function () {
-  $('#tablaPracticas').DataTable({
+  const tabla = $('#tablaPracticas').DataTable({
     language: {
       url: '//cdn.datatables.net/plug-ins/1.13.5/i18n/es-ES.json'
     }
   });
+
+ $('#tablaPracticas tbody').on('click', '.btn-eliminar', function () {
+    const fila = $(this).closest('tr');
+    const id = fila.data('id');
+    console.log('ID de la práctica a eliminar:', id);
+    if (confirm('¿Estás seguro de eliminar esta práctica?')) {
+      $.ajax({
+        url: baseUrl + 'practicas/eliminar/' + id,
+        method: 'POST',
+        success: function (respuesta) {
+          if (respuesta.status === 'ok') {
+            tabla.row(fila).remove().draw();
+          } else {
+            alert('No se pudo eliminar la práctica.');
+          }
+        },
+        error: function () {
+          alert('Error al eliminar la práctica.');
+        }
+      });
+    }
+  }); 
+
+
 
   const ctx = document.getElementById('graficaDistribucion').getContext('2d');
   new Chart(ctx, {

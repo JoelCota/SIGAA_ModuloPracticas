@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Models\PracticaModel;
@@ -27,5 +28,15 @@ class Practicas extends Controller
         ]);
 
         return redirect()->to('/practicas');
+    }
+
+    public function eliminar($id)
+    {
+        $modelo = new PracticaModel();
+        if ($modelo->delete($id)) {
+            return $this->response->setJSON(['status' => 'ok']);
+        } else {
+            return $this->response->setStatusCode(500)->setJSON(['status' => 'error']);
+        }
     }
 }

@@ -17,8 +17,8 @@
     </div>
 
     <button class="btn btn-primary float-right mb-3 shadow-sm" data-toggle="modal" data-target="#modalRegistroPractica">
-        <i class="fas fa-plus-circle"></i> Agregar Práctica
-      </button>
+      <i class="fas fa-plus-circle"></i> Agregar Práctica
+    </button>
 
 
     <div class="table-responsive">
@@ -37,7 +37,7 @@
         <tbody class="text-center">
           <?php if (!empty($practicas)): ?>
             <?php foreach ($practicas as $p): ?>
-              <tr>
+              <tr data-id="<?= esc($p['id']) ?>">
                 <td><?= esc($p['nombre']) ?></td>
                 <td><?= esc($p['tipo']) ?></td>
                 <td><?= esc($p['fecha_inicio']) ?></td>
@@ -45,8 +45,12 @@
                 <td><?= esc($p['horas']) ?></td>
                 <td><?= esc($p['materia']) ?></td>
                 <td>
-                  <button class="btn btn-sm btn-warning"><i class="fas fa-edit"></i></button>
-                  <button class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></button>
+                  <button class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modalRegistroAlumno">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-sm btn-danger btn-eliminar ">
+                    <i class="fas fa-trash-alt"></i>
+                  </button>
                 </td>
               </tr>
             <?php endforeach ?>
@@ -58,12 +62,15 @@
         </tbody>
       </table>
     </div>
-  </div>
 
+  </div>
+  <script>
+    const baseUrl = "<?= base_url() ?>";
+  </script>
   <!-- Modal de Registro -->
   <?= view('practicas/modal_registro') ?>
   <?= view('practicas/reportes_admin') ?>
-
+  <?= view('practicas/modal_registroAlumno') ?>
 </div>
 
 
