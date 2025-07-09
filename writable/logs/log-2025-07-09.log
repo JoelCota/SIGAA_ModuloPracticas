@@ -1,0 +1,8 @@
+CRITICAL - 2025-07-09 14:05:47 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes)
+[Method: GET, Route: practicas]
+in APPPATH\Views\practicas\modal_registro.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-07-09 14:05:55 --> ErrorException: Allowed memory size of 134217728 bytes exhausted (tried to allocate 32768 bytes)
+[Method: GET, Route: practicas]
+in APPPATH\Views\practicas\modal_registro.php on line 1.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()

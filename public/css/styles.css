@@ -1,0 +1,53 @@
+.cv-container {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 30px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+      border: 1px solid #dee2e6;
+    }
+
+    .header-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #006db6;
+    }
+
+    .section-description {
+      font-size: 0.95rem;
+      color: #555555;
+    }
+
+    hr.mt-2{
+        border-top: 3px solid #006db6; 
+        width: 100%;
+    }
+    .chart-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      .chart-wrapper {
+        height: auto;
+      }
+    }
+
+    canvas#w-100 {
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    table.dataTable thead th {
+      background: #f1f5f9;
+      color: #0066cc;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.5px;
+      padding: 14px 16px;
+      border-bottom: 2px solid #e5e7eb !important;
+      vertical-align: middle;
+    }
